@@ -11,7 +11,8 @@ Nos notificará del suceso y en la fecha que ha ocurrido.
 - El lenguaje que se va a usar es [Python](https://www.python.org/) un lenguaje que personalmente me gusta.
 
 ### Framework
+
 - El framework que voy a usar es [hug](http://www.hug.rest/). Hug tiene como objetivo hacer que desarrollar API impulsadas por Python sea lo más simple posible, pero no más simple. Como resultado, simplifica drásticamente el desarrollo de la API de Python.
 
 ### Base de datos
-- Para la base de datos voy a utilizar [Mysql](https://www.mysql.com/) . 
+- Para la base de datos voy a utilizar [Mysql](https://www.mysql.com/) .
