@@ -1,4 +1,5 @@
 # IV_1819_Proyecto
+[![Build Status](https://travis-ci.com/juaneml/IV_1819_Proyecto.svg?branch=master)](https://travis-ci.com/juaneml/IV_1819_Proyecto)
 Repositorio para el Infraestructura Virtual.
 
 ## Descripción
