@@ -6,7 +6,7 @@ import os
 import hug
 
 @hug.get('/get/document', output=hug.output_format.json)
-class mi_service():
+class mi_service:
     """ Clase para el microservicio """
     def fun():
         with urllib.request.urlopen("https://newsapi.org/v2/top-headlines?sources=el-mundo&apiKey=3daa18d2a35747a4ab8a03b449c7e048") as url:
