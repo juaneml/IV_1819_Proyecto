@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """A simple API to enable adding two numbers together"""
 import urllib.request, json
 import os
@@ -20,7 +22,7 @@ class mi_service():
 
 
         return  '%s %s' % (list[0], list[1])
-        
+
 
 if __name__ == '__hug__':
 
