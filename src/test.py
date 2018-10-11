@@ -6,7 +6,7 @@ import first
 class Test(unittest.TestCase):
 
     def imprime():
-        assertEqual(self.test.first(3,4),True,"Correcto")
+        assertEqual(self.test.fun(),True,"Correcto")
 
 if __name__ == '__main__':
     unittest.main()
