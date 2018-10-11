@@ -3,7 +3,7 @@
 import unittest
 import first
 
-class Test(unittest.TesTCase):
+class Test(unittest.TestCase):
 
     def imprime():
         assertEqual(self.test.first(3,4),True,"Correcto")
