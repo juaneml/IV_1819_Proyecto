@@ -6,7 +6,7 @@ import first
 class Test(unittest.TesTCase):
 
     def imprime():
-        return first.test.fun()
+        first.test.fun()
 
-if __name__ =='__test__':
-    unittest.test()
+if __name__ == '__main__':
+    unittest.main()
