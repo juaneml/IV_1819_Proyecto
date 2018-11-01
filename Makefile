@@ -1,3 +1,3 @@
 
 test:
-	cd ./src/ && python test.py
+	cd ./test/ && py.test test.py
