@@ -30,7 +30,7 @@ class Noticia:
         with open('../json/datos_m.json','r') as noti:
                 self.noticias = json.load(noti)#json.loads(open('../json/datos_m.json').read())
         self.Crea_noticia()
-
+        self.num_noticias()
 
     def get_lista(self):
         return self.noticias
@@ -123,14 +123,16 @@ class Articulo:
     num_noti = 0
 
     def __init__(self):
-         Noticia.__init__(self)
          self.clase = Noticia()
+         self.num_noti
+         self.Imprime()
+         self.Imprime_noti()
 
     """ Imprime los datos title,description, url y publishedAt"""
 
     def Imprime(self):
         tam = self.clase.num_noticias()# len(self.clase.get_titulo())-1 ## número de elementos
-        print("Tamaño" ,tam)
+        self.Set_numNoti(tam)
         for i in range(tam-1):
 
             print("\nNoticia: \n")
@@ -142,6 +144,11 @@ class Articulo:
     def Imprime_noti(self):
         print("\nEl número de articulos son : " + str(self.clase.num_noticias()) )
 
+    def Num_arti(self):
+        return self.num_noti
+
+    def Set_numNoti(self,num):
+        self.num_noti = num
 
 if __name__ == '__main__':
     Noticia.Crea_noticia(Noticia)
