@@ -24,8 +24,8 @@ class Noticia(object):
     """      Título     """
 
     """Devuelve el título de la noticia """
-    def get_titulo(self):
-        return self.titulo
+    def get_titulo(self,titulo):
+        return self.titulo[titulo]
 
     """Cambia el título de la noticia"""
     def set_titulo(self,string):
@@ -38,8 +38,8 @@ class Noticia(object):
     """     Descripción     """
 
     """Devuelve la descripción de la noticia """
-    def get_descrip(self):
-        return self.descrip
+    def get_descrip(self,des):
+        return self.descrip[des]
 
     """Cambia la descripción de la noticia """
     def set_descrip(self,string):
@@ -52,8 +52,8 @@ class Noticia(object):
     """         Url         """
 
     """ Devuelve la url de la noticia"""
-    def get_url(self):
-        return self.url
+    def get_url(self,d_url):
+        return self.url[d_url]
 
     """ Cambia la url de la noticia"""
     def set_url(self,string):
@@ -65,8 +65,8 @@ class Noticia(object):
 
     """     Fecha publicación       """
 
-    def get_publicado(self):
-        return self.published
+    def get_publicado(self,publi):
+        return self.published[publi]
 
     """ Cambia fecha publicado"""
     def set_publicaddo(self,string):
@@ -80,7 +80,7 @@ class Noticia(object):
     def fun():
         with urllib.request.urlopen("https://newsapi.org/v2/top-headlines?sources=el-mundo&apiKey=3daa18d2a35747a4ab8a03b449c7e048") as url:
             data = json.loads(url.read().decode('utf-8'))
-        leer = json.loads(open('datos_m.json').read())
+        leer = json.loads(open('../json/datos_m.json').read())
 
         return  leer
 
@@ -93,7 +93,9 @@ class articulo(Noticia):
          self.clase
          self.num_noti
 
-    """ Imprime los datos title,description, url y publishedAt """
+    """ Imprime los datos title,description, url y publishedAt 
+    Si los datos son distinto de None se añaden"""
+    
     def Imprime(self):
         dic = self.fun()
         cont = 0 # contador noticias
@@ -116,15 +118,15 @@ class articulo(Noticia):
                 self.clase.add_publicado("")
             cont+=1
 
-        tam = len(self.clase.get_titulo())-1 ## número de elementos
+        tam =cont-1 # len(self.clase.get_titulo())-1 ## número de elementos
 
         for i in range(len(dic)-1):
 
             print("\nNoticia: \n")
-            print(''.join(self.clase.get_titulo()[i]))
-            print(''.join(self.clase.get_descrip()[i]))
-            print(''.join(self.clase.get_url()[i]))
-            print(''.join(self.clase.get_publicado()[i]))
+            print(''.join(self.clase.get_titulo(i)) )
+            print(''.join(self.clase.get_descrip(i)))
+            print(''.join(self.clase.get_url(i)))
+            print(''.join(self.clase.get_publicado(i)))
 
         self.num_noti = cont
 
