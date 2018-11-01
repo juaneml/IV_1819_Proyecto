@@ -7,8 +7,8 @@ from first import *
 
 class Test(unittest.TestCase):
 
-    #pruebaArt = Articulo()
-    #pruebaNot = Noticia()
+    pruebaArt = Articulo()
+    pruebaNot = Noticia()
 
     """Test noticias """
     def TestNoticias(self):
@@ -16,4 +16,4 @@ class Test(unittest.TestCase):
         self.assertEqual(self.pruebaNot.get_titulo(0),str('German governing parties punished in state election'),"Titulo Correcto")
 
 if __name__ == '__main__':
-    unittest.main()
+    TestNoticias(Test)#unittest.main()
