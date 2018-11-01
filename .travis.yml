@@ -9,5 +9,5 @@ install:
   - pip install hug -U
 
 # command to run tests
-script: cd ./test pytest
+script: cd ./test && pytest
   #- make test
