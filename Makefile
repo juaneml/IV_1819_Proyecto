@@ -1,3 +1,3 @@
 
 test:
-	cd ./test/ && pytest 
+	cd ./test/ && python test_.py
