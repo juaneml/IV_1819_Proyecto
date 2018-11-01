@@ -7,8 +7,8 @@ from first import *
 
 class Test(unittest.TestCase):
 
-    #pruebaArt = Articulo()
-    #pruebaNot = Noticia()
+    pruebaArt = Articulo()
+    pruebaNot = Noticia()
 
     """Test noticias """
     def TestNoticias(self):
