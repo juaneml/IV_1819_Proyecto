@@ -13,19 +13,33 @@ import os
     Para la clase Noticia optenemos los datos a través de la api del periódico El Mundo
     y almaceno los datos en un fichero que llamo datos.json
 """
-class Noticia(object):
+class Noticia:
+    titulo = []
+    descrip =[]
+    url = []
+    published = []
+    noticias = []
+    num_noti = 0
+
     def __init__(self):
         self.titulo = []
         self.descrip = []
         self.url = []
         self.published = []
+        self.num_noti
+        with open('../json/datos_m.json','r') as noti:
+                self.noticias = json.load(noti)#json.loads(open('../json/datos_m.json').read())
+        self.Crea_noticia()
 
+
+    def get_lista(self):
+        return self.noticias
 
     """      Título     """
 
     """Devuelve el título de la noticia """
-    def get_titulo(self,titulo):
-        return self.titulo[titulo]
+    def get_titulo(self,string):
+        return self.titulo[string]
 
     """Cambia el título de la noticia"""
     def set_titulo(self,string):
@@ -76,51 +90,48 @@ class Noticia(object):
     def add_publicado(self,string):
         self.published.append(string)
 
-    """ Obtiene los datos de la api y los almacena en un fichero con extensión json """
-    def fun():
-        with urllib.request.urlopen("https://newsapi.org/v2/top-headlines?sources=el-mundo&apiKey=3daa18d2a35747a4ab8a03b449c7e048") as url:
-            data = json.loads(url.read().decode('utf-8'))
-        leer = json.loads(open('../json/datos_m.json').read())
-
-        return  leer
-
-"""Clase articulo que hereda de Noticia,  """
-
-class Articulo(Noticia):
-    clase = Noticia()
-
-    def __init__(self):
-         self.clase
-         self.num_noti
-
-    """ Imprime los datos title,description, url y publishedAt 
-    Si los datos son distinto de None se añaden"""
-
-    def Imprime(self):
-        dic = self.fun()
+    def Crea_noticia(self):
+        dic = self.noticias
         cont = 0 # contador noticias
         for i in dic:
             if(i['title'] != None):
-                self.clase.add_titulo(i['title'])
+                self.add_titulo(i['title'])
             else:
-                self.clase.add_titulo("")
+                self.add_titulo("")
             if(i['description']!=None):
-                self.clase.add_descrip(i['description'])
+                self.add_descrip(i['description'])
             else:
-                self.clase.add_descrip("")
+                self.add_descrip("")
             if(i['url'] != None):
-                self.clase.add_url(i['url'])
+                self.add_url(i['url'])
             else:
-                self.clase.add_url("")
+                self.add_url("")
             if(i['publishedAt']!=None):
-                self.clase.add_publicado(i['publishedAt'])
+                self.add_publicado(i['publishedAt'])
             else:
-                self.clase.add_publicado("")
+                self.add_publicado("")
             cont+=1
+        self.num_noti = cont
 
-        tam =cont-1 # len(self.clase.get_titulo())-1 ## número de elementos
+    def num_noticias(self):
+        return self.num_noti
 
-        for i in range(len(dic)-1):
+"""Clase articulo que hereda de Noticia,  """
+
+class Articulo:
+    clase = Noticia()
+    num_noti = 0
+
+    def __init__(self):
+         Noticia.__init__(self)
+         self.clase = Noticia()
+
+    """ Imprime los datos title,description, url y publishedAt"""
+
+    def Imprime(self):
+        tam = self.clase.num_noticias()# len(self.clase.get_titulo())-1 ## número de elementos
+        print("Tamaño" ,tam)
+        for i in range(tam-1):
 
             print("\nNoticia: \n")
             print(''.join(self.clase.get_titulo(i)) )
@@ -128,18 +139,11 @@ class Articulo(Noticia):
             print(''.join(self.clase.get_url(i)))
             print(''.join(self.clase.get_publicado(i)))
 
-        self.num_noti = cont
-
-
-    def num_noticias(self):
-        return self.num_noti
-
     def Imprime_noti(self):
-        print("\nEl número de articulos son : " + str(self.num_noticias(self)) )
-
+        print("\nEl número de articulos son : " + str(self.clase.num_noticias()) )
 
 
 if __name__ == '__main__':
+    Noticia.Crea_noticia(Noticia)
     Articulo.Imprime(Articulo)
     Articulo.Imprime_noti(Articulo)
-
