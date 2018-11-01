@@ -86,7 +86,7 @@ class Noticia(object):
 
 """Clase articulo que hereda de Noticia,  """
 
-class articulo(Noticia):
+class Articulo(Noticia):
     clase = Noticia()
 
     def __init__(self):
@@ -95,7 +95,7 @@ class articulo(Noticia):
 
     """ Imprime los datos title,description, url y publishedAt 
     Si los datos son distinto de None se añaden"""
-    
+
     def Imprime(self):
         dic = self.fun()
         cont = 0 # contador noticias
@@ -140,6 +140,6 @@ class articulo(Noticia):
 
 
 if __name__ == '__main__':
-    articulo.Imprime(articulo)
-    articulo.Imprime_noti(articulo)
+    Articulo.Imprime(Articulo)
+    Articulo.Imprime_noti(Articulo)
 

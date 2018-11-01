@@ -5,7 +5,7 @@ import first
 
 class Test(unittest.TestCase):
 
-    prueba = Noticia
+    prueba = Noticia.fun()
     def imprime():
         assertEqual(self.test.fun(),True,"Correcto")
 
