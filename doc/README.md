@@ -26,6 +26,6 @@ install:
 script: cd ./test && pytest
 	
 ## Ejemplo de salida:
-![travis.png](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc/travis.png)
+![travis.png](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/travis.png)
 
 ##Test
