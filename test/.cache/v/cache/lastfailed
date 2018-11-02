@@ -1,5 +1,4 @@
 {
-  "test_.py::TestMethods": true, 
   "test_first.py": true, 
   "test_first.py::TestStringMethods::test_upper": true, 
   "test_nuevo.py": true, 

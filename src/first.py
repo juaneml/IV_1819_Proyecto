@@ -12,7 +12,7 @@ import os
 """ Clase Noticia para el microservicio
     Tiene los atributos titulo, descrip, url y published
     Para la clase Noticia optenemos los datos a través de la api del periódico El Mundo
-    y almaceno los datos en un fichero que llamo datos.json
+    y almaceno los datos en un fichero que llamo datos.json y datos_m.json
 """
 class Noticia:
     titulo = []
@@ -29,9 +29,11 @@ class Noticia:
         self.published = []
         self.num_noti
         with open('../json/datos_m.json','r') as noti:
-                self.noticias = json.load(noti)#json.loads(open('../json/datos_m.json').read())
+                self.noticias = json.load(noti)
         self.Crea_noticia()
         self.num_noticias()
+
+    """ Devuelve la lista de noticas """
 
     def get_lista(self):
         return self.noticias
@@ -56,7 +58,12 @@ class Noticia:
 
     """Añade el titulo a de la noticias """
     def add_titulo(self,string):
-        self.titulo.append(string)
+
+        if (type(string) != int):
+            self.titulo.append(string)
+            return True
+        else:
+            return False
 
     """     Descripción     """
 
@@ -69,38 +76,75 @@ class Noticia:
 
     """Cambia la descripción de la noticia """
     def set_descrip(self,string):
-        self.descrip = string
+
+        if(type(string)!= int):
+            self.descrip = string
+            return True
+        else:
+            return False
 
     """Añade la descripción de la noticia """
     def add_descrip(self,string):
-        self.descrip.append(string)
+
+        if(type(string) != int):
+            self.descrip.append(string)
+            return True
+        else:
+            return False
 
     """         Url         """
 
     """ Devuelve la url de la noticia"""
     def get_url(self,d_url):
-        return self.url[d_url]
+        try:
+            return self.url[d_url]
+        except:
+            return False
 
     """ Cambia la url de la noticia"""
     def set_url(self,string):
-        self.url = string
+
+        if(type(strin) != int):
+            self.url = string
+            return True
+        else:
+            return False
 
     """ Añade la url de la noticia"""
+
     def add_url(self,string):
-        self.url.append(string)
+
+        if(type(string)!= int):
+            self.url.append(string)
+            return True
+        else:
+            return False
 
     """     Fecha publicación       """
 
     def get_publicado(self,publi):
-        return self.published[publi]
+        try:
+            return self.published[publi]
+        except:
+            return False
 
     """ Cambia fecha publicado"""
+
     def set_publicaddo(self,string):
-        self.published = string
+        if(type(string)!= int):
+            self.published = string
+            return True
+        else:
+            return False
 
     """ Añade fecha publicado """
+
     def add_publicado(self,string):
-        self.published.append(string)
+        if(type(string)!= int):
+            self.published.append(string)
+            return True
+        else:
+            return False
 
     def Crea_noticia(self):
         dic = self.noticias
@@ -128,7 +172,7 @@ class Noticia:
     def num_noticias(self):
         return self.num_noti
 
-"""Clase articulo que hereda de Noticia,  """
+"""Clase Articulo que imprime las noticias e imprime el numero de artículos """
 
 class Articulo:
     clase = Noticia()
@@ -140,8 +184,11 @@ class Articulo:
          self.Imprime()
          self.Imprime_noti()
 
+    """ Mofifica el numero de noticas almacenadas """
+
     def Set_numNoti(self,num):
         self.num_noti = num
+
     """ Imprime los datos title,description, url y publishedAt"""
 
     def Imprime(self):
@@ -161,9 +208,3 @@ class Articulo:
     def Num_arti(self):
         return self.num_noti
 
-    
-
-if __name__ == '__main__':
-    Noticia.Crea_noticia(Noticia)
-    Articulo.Imprime(Articulo)
-    Articulo.Imprime_noti(Articulo)

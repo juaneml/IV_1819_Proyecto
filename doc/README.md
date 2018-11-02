@@ -28,4 +28,11 @@ script: cd ./test && pytest
 ## Ejemplo de salida:
 ![travis.png](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/travis.png)
 
-##Test
+## Test
+Los [Test](https://github.com/juaneml/IV_1819_Proyecto/blob/master/test/test_.py) se han realizado para comprobar que los distintos métodos de la clase [first](https://github.com/juaneml/IV_1819_Proyecto/blob/master/src/first.py) funcionan correctamente.
+
+* test_noticia: Comprueba que el número de noticias y artículos coincide, y que el índice para obtener el título es un entero
+
+* test_titulo: Comprueba que la obtención del titulo es el deseado del indice 0, y que el cambio de un título debe ser una cadena de carácteres.
+
+* test_descrip: Comprueba que la descripción del índice 0 es vacía y que la descripción del índice 1 es la deseada.
