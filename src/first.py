@@ -40,11 +40,19 @@ class Noticia:
 
     """Devuelve el título de la noticia """
     def get_titulo(self,string):
-        return self.titulo[string]
+        try:
+            return self.titulo[string]
+        except:
+            return False
 
     """Cambia el título de la noticia"""
     def set_titulo(self,string):
-        self.titulo = string
+
+        if (type(string) != int):
+            self.titulo = string
+            return True
+        else:
+            return False
 
     """Añade el titulo a de la noticias """
     def add_titulo(self,string):
@@ -54,7 +62,10 @@ class Noticia:
 
     """Devuelve la descripción de la noticia """
     def get_descrip(self,des):
-        return self.descrip[des]
+        try:
+            return self.descrip[des]
+        except:
+            return False
 
     """Cambia la descripción de la noticia """
     def set_descrip(self,string):
@@ -125,10 +136,12 @@ class Articulo:
 
     def __init__(self):
          self.clase = Noticia()
-         self.num_noti
+         self.Num_arti()
          self.Imprime()
          self.Imprime_noti()
 
+    def Set_numNoti(self,num):
+        self.num_noti = num
     """ Imprime los datos title,description, url y publishedAt"""
 
     def Imprime(self):
@@ -148,10 +161,9 @@ class Articulo:
     def Num_arti(self):
         return self.num_noti
 
-    def Set_numNoti(self,num):
-        self.num_noti = num
+    
 
-#if __name__ == '__main__':
-    #Noticia.Crea_noticia(Noticia)
-    #Articulo.Imprime(Articulo)
-    #Articulo.Imprime_noti(Articulo)
+if __name__ == '__main__':
+    Noticia.Crea_noticia(Noticia)
+    Articulo.Imprime(Articulo)
+    Articulo.Imprime_noti(Articulo)

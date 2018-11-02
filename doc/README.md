@@ -7,7 +7,7 @@ para ello seguimos los siguientes pasos:
 Crear el repositorio y el código con las distintas funcionalidades:
 
 ## Paso 2:
-Accedemos a la página de Travis [Travis](https://travis-ci.org) y vinculamos nuestra cuenta de GitHub a Travis.
+Accedemos a la página de [Travis](https://travis-ci.org) y vinculamos nuestra cuenta de GitHub a Travis.
 
 ## Paso 3:
 Seleccionamos el repositorio que queremos Travis haga el seguimiento y pase los test.
@@ -25,3 +25,7 @@ install:
 
 script: cd ./test && pytest
 	
+## Ejemplo de salida:
+![travis.png](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc/travis.png)
+
+##Test
