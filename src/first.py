@@ -3,8 +3,9 @@
 
 # first.py
 
-import urllib.request, json
-import requests
+#import urllib.request,
+import json
+#import requests
 import os
 
 
@@ -150,7 +151,7 @@ class Articulo:
     def Set_numNoti(self,num):
         self.num_noti = num
 
-if __name__ == '__main__':
-    Noticia.Crea_noticia(Noticia)
-    Articulo.Imprime(Articulo)
-    Articulo.Imprime_noti(Articulo)
+#if __name__ == '__main__':
+    #Noticia.Crea_noticia(Noticia)
+    #Articulo.Imprime(Articulo)
+    #Articulo.Imprime_noti(Articulo)
