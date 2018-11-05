@@ -9,6 +9,11 @@ Repositorio para el Infraestructura Virtual.
 El proyecto que se va a realizar es sobre un servicio web que nos notifique de las noticias más destacadas de actualidad de España.
 Nos notificará del suceso y en la fecha que ha ocurrido.
 
+## Descripción de la clase
+En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un fichero con extensión json y la estructura es la siguiente.
+- Para la clase Noticia se definen las funcionalidades de obtener el título de la noticia, la descripción, la url de la fuente, y la fecha de publicación, así como funcionalidades para cambiar los datos.
+- Para la clase Articulo se definen funciones para mostrar las noticias con los parámetros, título, descripción, url, y la fecha de publicación.
+
 ## Herramientas a Usar
 
 ### Lenguaje
