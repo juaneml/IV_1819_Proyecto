@@ -1,0 +1,34 @@
+<!DOCTYPE html lang="es">
+<head>
+ <h1>PROYECTO IV</h1>
+</head>
+{% block style %}
+  <style>
+  li{
+    list-style:none;
+  }
+  h1{
+    text-align : center;
+    padding-right: : 15px;
+  }
+  body{
+    padding-left: 15px;
+  }
+  footer{
+    background-color: black;
+    color: white;
+  }
+  </style>
+{% endblock %}
+<body>
+  <h2>Estas son las noticias destacadas </h2>
+
+  {% for item in dic_noti %}
+     {% if item != ''%}
+        <li> <div>{{item}}<div></li>
+        <p> </p>
+      {%endif%}
+  {% endfor %}
+</body>
+<footer>Alumno: Juan Esteban Moreno L&oacutepez </footer>
+</html>
