@@ -12,6 +12,9 @@ from jinja2 import Template
 
 salida = {
     "status:" "OK"
+    "ejemplo":{"ruta":"/inicio",
+    "valor":"HTML:devuelto}"
+    }
 
 }
 
@@ -24,6 +27,7 @@ def get_template(name):
 @hug.get('/')
 def getEstado():
     return salida;
+
 @hug.cli()
 @hug.get('/inicio',output=hug.output_format.html)
 def inicio():
