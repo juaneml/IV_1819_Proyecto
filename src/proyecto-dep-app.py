@@ -37,13 +37,6 @@ def inicio():
     print (type(noticia.get_lista()))
     for i in range(tam):#noticia.get_lista(): #range(tam):
 
-        # dic_noti.setdefault('Titulo_'+str(i),''.join(noticia.get_titulo(i)) )
-        # lista_noti.append(dic_noti)
-        # dic_noti.setdefault('Descripción_'+str(i),''.join(noticia.get_descrip(i)))
-        # lista_noti.append(dic_noti)
-        # dic_noti.setdefault('URL_'+str(i),''.join(noticia.get_url(i)))
-        # lista_noti.append(dic_noti)
-        # dic_noti.setdefault('Fecha_publicación_'+str(i), ''.join(noticia.get_publicado(i)))
         lista_noti.append(noticia.get_titulo(i))
         lista_noti.append(noticia.get_descrip(i))
         lista_noti.append(noticia.get_publicado(i))
