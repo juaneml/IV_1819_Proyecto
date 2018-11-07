@@ -1,12 +1,11 @@
 # Documentación para el proyecto.
 El proyecto que se va a realizar es sobre un microservicio que de las noticias
 más relevantes, partimos de una primera versión en la que a partir de un fichero
-con extensión .json que se optienen a partir de la [API del periódico del mundo]
-(https://newsapi.org/s/el-mundo-api)
+con extensión .json que se optienen a partir de la [API del periódico del mundo] (https://newsapi.org/s/el-mundo-api)
 
 # Herramientas que van a ser usadas
 
-* [Hug](www.hug.rest) como micro-framework web.
+* [Hug](https://www.hug.rest) como micro-framework web.
   * Se va a usar porque me parece intuitivo y sencillo para la creación del microservicio y como he usado [Flask](flak.pocoo.org) quería experimentar con otro tipo de micro-framework web.
 
 * [Travis-CI](http://travis-ci.org) servicio que proporciona la integración continua.
