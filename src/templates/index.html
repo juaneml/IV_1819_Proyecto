@@ -22,11 +22,48 @@
 {% endblock %}
 <body>
   <h2>Estas son las noticias destacadas </h2>
-
+  {% set count = 0 %}
   {% for item in dic_noti %}
+    {% set count = count + loop.index %}
+
      {% if item != ''%}
-        <li> <div>{{item}}<div></li>
-        <p> </p>
+
+      {% if loop.index==1 or count%4==1 %}
+        <section>
+          <h2> Titulo </h2>
+          <ul>
+            <li> <div>{{item}}<div></li>
+          </ul>
+        </section>
+
+        {%elif loop.index == 2 or count%4==2 %}
+          <section>
+            <h2>Descripci&oacuten </h2>
+            <ul>
+              <li> <div> {{item }}<div></li>
+            </ul>
+          </section>
+
+        {%elif loop.index==3 or count%4==3 %}
+          <section>
+            <h2> Url </h2>
+              <ul>
+                <li> <div>{{item}}<div></li>
+              </ul>
+          </section>
+
+        {%elif loop.index==4 or count%4==0 %}
+          <section>
+            <h2>Fecha </h2>
+              <ul>
+                <li> <div>{{item}}<div></li>
+              </ul>
+          </section>
+            <p>******************************************************************************************************************************************************* </p>
+
+
+      {% endif %}
+
       {%endif%}
   {% endfor %}
 </body>

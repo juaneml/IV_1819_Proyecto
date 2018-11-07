@@ -39,14 +39,15 @@ def inicio():
     dic_noti ={}
     lista_noti =[]
     print (type(noticia.get_lista()))
-    for i in range(tam):#noticia.get_lista(): #range(tam):
+    for i in range(tam):
 
         lista_noti.append(noticia.get_titulo(i))
         lista_noti.append(noticia.get_descrip(i))
+        lista_noti.append(noticia.get_url(i))
         lista_noti.append(noticia.get_publicado(i))
 
     return template.render(dic_noti=lista_noti)
 
 if __name__ == '__main__':
     inicio()
-    #hug.API(__name__).http.output_format = hug.output_format.html
+    
