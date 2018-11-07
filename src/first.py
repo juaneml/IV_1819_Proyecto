@@ -3,9 +3,8 @@
 
 # first.py
 
-#import urllib.request,
+
 import json
-#import requests
 import os
 
 
@@ -192,7 +191,7 @@ class Articulo:
     """ Imprime los datos title,description, url y publishedAt"""
 
     def Imprime(self):
-        tam = self.clase.num_noticias()# len(self.clase.get_titulo())-1 ## número de elementos
+        tam = self.clase.num_noticias()
         self.Set_numNoti(tam)
         for i in range(tam-1):
 
