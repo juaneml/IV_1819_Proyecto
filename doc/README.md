@@ -1,7 +1,7 @@
 # Documentación para el proyecto.
 El proyecto que se va a realizar es sobre un microservicio que de las noticias
 más relevantes, partimos de una primera versión en la que a partir de un fichero
-con extensión .json que se optienen a partir de la [API del periódico del mundo] (https://newsapi.org/s/el-mundo-api)
+con extensión .json que se optienen a partir de la [API del periódico del mundo](https://newsapi.org/s/el-mundo-api)
 
 # Herramientas que van a ser usadas
 
@@ -14,7 +14,7 @@ con extensión .json que se optienen a partir de la [API del periódico del mund
 * [Mysql](https://www.mysql.com) para el almacenamiento y gestión de las base de datos.
   * Herramienta conocida y extendida, sencilla de manejar, gratuita y documentación extensa.
 
-* Heroku, plataforma como servicio (PaaS) para integración continua.
+* [Heroku](https://www.heroku.com/), plataforma como servicio (PaaS) para integración continua.
   * Plataforma de servicio en la Nube, integración del proyecto en pocos pasos, soporta amplia gama de lenguajes para distintos tipos de necesidades.
 
 
