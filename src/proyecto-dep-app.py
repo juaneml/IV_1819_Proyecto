@@ -28,8 +28,8 @@ def getStatus():
     status = {"status:": "OK",
               "noticias" :
               {
-               "ruta":"/noticias",
-               "valor":"HTML:devuelto"
+               "ruta": "/noticias",
+               "valor": "HTML: devuelto"
 
               }
             }
