@@ -20,7 +20,12 @@ def get_template(name):
 @hug.local()
 @hug.get('/')
 def getEstado():
-    salida = {"status:": "OK",
+    salida = {"status": "OK"}
+    return salida
+
+@hug.get('/status')
+def getStatus():
+    status = {"status:": "OK",
               "noticias" :
               {
                "ruta":"/noticias",
@@ -28,7 +33,7 @@ def getEstado():
 
               }
             }
-    return salida
+    return status
 
 @hug.cli()
 @hug.get('/noticias',output=hug.output_format.html)
