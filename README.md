@@ -18,6 +18,7 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 ## Test
 - En el proyecto se hace uso de tests, se hace uso de [Pytest](https://docs.pytest.org/en/latest/), el nombre del test es [test_.py](https://github.com/juaneml/IV_1819_Proyecto/blob/master/test/test_.py)
 - Además los test pasan por el servicio de integración continua [Travis-CI](https://travis-ci.org/juaneml/IV_1819_Proyecto) que se ha configurado para el repositorio del proyecto.
+-[Configuración](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/Int-Cont-Trav.md)
 
 ## Herramientas a Usar
 
