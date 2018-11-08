@@ -12,6 +12,9 @@
     padding-right: : 15px;
   }
   body{
+    background-image: url("./noticia.jpg");
+    background-repeat: no-repeat;
+    background-position:relative;
     padding-left: 15px;
   }
   footer{
@@ -21,6 +24,7 @@
   </style>
 {% endblock %}
 <body>
+  <img src="{{url_for( 'templates',filename='noticia.jpg' ) }}"/>
   <h2>Estas son las noticias destacadas </h2>
   {% set count = 0 %}
   {% for item in dic_noti %}
@@ -48,7 +52,7 @@
           <section>
             <h2> Url </h2>
               <ul>
-                <li> <div>{{item}}<div></li>
+                <li> <div><a href ={{item}} />{{item}} </a><div></li>
               </ul>
           </section>
 
