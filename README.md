@@ -34,3 +34,6 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 - Para la base de datos voy a utilizar [Mysql](https://www.mysql.com/) .
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
+
+## Despliegue
+El despligue se encuentra: [https://proyecto-iv.herokuapp.com/](https://proyecto-iv.herokuapp.com/)
