@@ -26,7 +26,7 @@ install:
 script: cd ./test && pytest
 	
 ## Ejemplo de salida:
-![travis.png](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/travis.png)
+![travis.png](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/travis.png)
 
 ## Test
 Los [Test](https://github.com/juaneml/IV_1819_Proyecto/blob/master/test/test_.py) se han realizado para comprobar que los distintos métodos de la clase [first](https://github.com/juaneml/IV_1819_Proyecto/blob/master/src/first.py) funcionan correctamente.
