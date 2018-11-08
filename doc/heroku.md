@@ -8,12 +8,12 @@ En el siguiente documento veremos los pasos para desplegar nuestra apliación.
 
 ## Paso 2:
 - Conectamos nuestra aplicación con nuestro repositorio eh Github
-![connect](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/connect_github.png)
+![connect](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/conect_github.png)
 
 ## Paso 3:
 - Activamos la opción Wait for CI to pass before deploy, ya que tenemos a Travis para
 la ejecución de los tests.
-![automatic_desploy](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/connect_github.png)
+![automatic_desploy](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/automatic_deploys.png)
 
 # Adaptamos el proyecto para la ejecución de heroku
 - Añadimos los requerimientos en el arquivo requirements.txt necesarios en mi caso son los siguientes :
