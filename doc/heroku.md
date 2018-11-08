@@ -39,13 +39,12 @@ la ejecución de los tests.
  
  # Creamos boton de despliegue en Heroku
  ## Paso 1
- - Creamos un archivo con extensión dep_heroku.json en el repositorio, el contenido en mi caso es el siguiente:
-  
-      : { 
-      :  "name" : "Proyecto-IV", 
-      : "description" : "Proyecto IV, para el desarrollo del microservicio", 
-      :  "repository": "https://github.com/juaneml/IV_1819_Proyecto", 
-      :  "logo": "https://node-js-sample.herokuapp.com/node.png", 
-      : "keywords": ["python", "hug", "jinja2"] 
-      : }
+ Creamos un archivo con extensión dep_heroku.json en el repositorio, el contenido en mi caso es el siguiente:
+   : { 
+   :  "name" : "Proyecto-IV", 
+   : "description" : "Proyecto IV, para el desarrollo del microservicio", 
+   :  "repository": "https://github.com/juaneml/IV_1819_Proyecto", 
+   :  "logo": "https://node-js-sample.herokuapp.com/node.png", 
+   : "keywords": ["python", "hug", "jinja2"] 
+   : }
 
