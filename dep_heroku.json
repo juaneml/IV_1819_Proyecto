@@ -1,1 +1,8 @@
 
+{ 
+  "name" : "Proyecto-IV", 
+  "description" : "Proyecto IV, para el desarrollo del microservicio", 
+  "repository": "https://github.com/juaneml/IV_1819_Proyecto", 
+  "logo": "https://node-js-sample.herokuapp.com/node.png", 
+  "keywords": ["python", "hug", "jinja2"] 
+}
