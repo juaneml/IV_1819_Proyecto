@@ -10,10 +10,9 @@ Repositorio para el Infraestructura Virtual.
 El proyecto que se va a realizar es sobre un servicio web que nos notifique de las noticias más destacadas de actualidad de España.
 Nos notificará del suceso y en la fecha que ha ocurrido.
 
-## Despliegue
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://proyecto-iv.herokuapp.com/)
 
-[Despligue](https://proyecto-iv.herokuapp.com/)
+[El despligue](https://proyecto-iv.herokuapp.com/)
 
 ## Documentación del proyecto
 [Documentación](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
