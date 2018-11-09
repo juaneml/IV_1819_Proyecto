@@ -13,7 +13,7 @@ Nos notificará del suceso y en la fecha que ha ocurrido.
 ## Despliegue
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://proyecto-iv.herokuapp.com/)
 
-El despligue de la aplicación se encuentra: [https://proyecto-iv.herokuapp.com/](https://proyecto-iv.herokuapp.com/)
+[Despligue](https://proyecto-iv.herokuapp.com/)
 
 ## Documentación del proyecto
 [Documentación](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
