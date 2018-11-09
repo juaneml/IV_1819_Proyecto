@@ -27,7 +27,8 @@ class Noticia:
         self.url = []
         self.published = []
         self.num_noti
-        with open('../json/datos_m.json','r') as noti:
+        #with open('../json/datos_m.json','r') as noti:
+        with open('../json/datos.json','r') as noti:
                 self.noticias = json.load(noti)
         self.Crea_noticia()
         self.num_noticias()
@@ -192,7 +193,7 @@ class Articulo:
 
     def Imprime(self):
         tam = self.clase.num_noticias()
-        self.Set_numNoti(tam)
+        self.Set_numNoti(self,tam)
         for i in range(tam-1):
 
             print("\nNoticia: \n")
@@ -207,3 +208,5 @@ class Articulo:
     def Num_arti(self):
         return self.num_noti
 
+if __name__ == '__main__':
+    Articulo.Imprime(Articulo)
