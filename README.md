@@ -11,6 +11,11 @@ Repositorio para el Infraestructura Virtual.
 El proyecto que se va a realizar es sobre un servicio web que nos notifique de las noticias más destacadas de actualidad de España.
 Nos notificará del suceso y en la fecha que ha ocurrido.
 
+## Documentación del proyecto
+Documentación [https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc]
+## Despliegue
+El despligue de la aplicación se encuentra: [https://proyecto-iv.herokuapp.com/](https://proyecto-iv.herokuapp.com/)
+
 ## Descripción de la clase
 En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un fichero con extensión json y la estructura es la siguiente.
 - Para la clase Noticia se definen las funcionalidades de obtener el título de la noticia, la descripción, la url de la fuente, y la fecha de publicación, así como funcionalidades para cambiar los datos.
@@ -35,5 +40,4 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
-## Despliegue
-El despligue se encuentra: [https://proyecto-iv.herokuapp.com/](https://proyecto-iv.herokuapp.com/)
+
