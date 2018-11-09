@@ -14,7 +14,7 @@ Nos notificará del suceso y en la fecha que ha ocurrido.
 El despligue de la aplicación se encuentra: [https://proyecto-iv.herokuapp.com/](https://proyecto-iv.herokuapp.com/)
 
 ## Documentación del proyecto
-[Documentación] (https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
+[Documentación](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
 
 ## Descripción de la clase
 En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un fichero con extensión json y la estructura es la siguiente.
