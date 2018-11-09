@@ -33,25 +33,5 @@ def status():
             }
     return status
 
-@hug.cli()
-@hug.get('/noticias',output=hug.output_format.html)
-def inicio():
-    template = get_template("index.html")
-
-    noticia = Noticia() #diccionario
-    articulo = Articulo()
-    tam = noticia.num_noticias()
-    dic_noti ={}
-    lista_noti =[]
-
-    for i in range(tam):
-
-        lista_noti.append(noticia.get_titulo(i))
-        lista_noti.append(noticia.get_descrip(i))
-        lista_noti.append(noticia.get_url(i))
-        lista_noti.append(noticia.get_publicado(i))
-
-    return template.render(dic_noti=lista_noti)
-
 if __name__ == '__main__':
     inicio()
