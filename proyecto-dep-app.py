@@ -20,7 +20,7 @@ def get_template(name):
 @hug.local()
 @hug.get('/')
 def getEstado():
-    salida = {"status": "OK"}
+    salida = {"status":"OK"}
     return salida
 
 @hug.get('/status')
