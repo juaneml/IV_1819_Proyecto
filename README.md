@@ -12,7 +12,7 @@ Nos notificará del suceso y en la fecha que ha ocurrido.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://proyecto-iv.herokuapp.com/)
 
-[El despligue](https://proyecto-iv.herokuapp.com/)
+El despligue: https://proyecto-iv.herokuapp.com/
 
 ## Documentación del proyecto
 [Documentación](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
