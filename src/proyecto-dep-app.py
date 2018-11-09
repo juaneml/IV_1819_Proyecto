@@ -55,6 +55,5 @@ def inicio():
 
     return template.render(dic_noti=lista_noti)
 
-# @hug.get('/templates',output=hug.output_format.file)
 if __name__ == '__main__':
     inicio()
