@@ -27,8 +27,7 @@ class Noticia:
         self.url = []
         self.published = []
         self.num_noti
-        #with open('../json/datos_m.json','r') as noti:
-        with open('../json/datos.json','r') as noti:
+        with open('../json/datos_m.json','r') as noti:
                 self.noticias = json.load(noti)
         self.Crea_noticia()
         self.num_noticias()
