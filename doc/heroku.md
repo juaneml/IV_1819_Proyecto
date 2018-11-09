@@ -36,12 +36,11 @@ la ejecución de los tests.
 
  # Comprobamos que todo ha ido bien:
   - En la ruta / de nuesta apliación abrimos el terminal y hacemos uso del comando curl y accedemos a la url que nos proporciona Heroku de    nuestra aplicación.
-  
    ~~~
    $curl https://proyecto-iv.herokuapp.com/
    {"status": "OK"}
    ~~~
- - Se ha añadido /status a nuestra aplicación y ejecutando el comando curl obtenemos la siguiente salida:
+   - Se ha añadido /status a nuestra aplicación y ejecutando el comando curl obtenemos la siguiente salida:
    ~~~
    {"status:": "OK", "noticias": {"ruta": "/noticias", "valor": "HTML: devuelto"}}
    ~~~
