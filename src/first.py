@@ -193,7 +193,7 @@ class Articulo:
 
     def Imprime(self):
         tam = self.clase.num_noticias()
-        self.Set_numNoti(self,tam)
+        self.Set_numNoti(tam)
         for i in range(tam-1):
 
             print("\nNoticia: \n")
@@ -208,5 +208,4 @@ class Articulo:
     def Num_arti(self):
         return self.num_noti
 
-if __name__ == '__main__':
-    Articulo.Imprime(Articulo)
+
