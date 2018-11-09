@@ -24,7 +24,7 @@ def getEstado():
     return salida
 
 @hug.get('/status')
-def getStatus():
+def status():
     status = {"status:": "OK",
               "noticias" :
               {
