@@ -1,6 +1,6 @@
 
-#!/usr/bin/python
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import hug
 import json
 import sys
@@ -19,14 +19,14 @@ def get_template(name):
 #@hug.local()
 @hug.get('/')
 def getEstado():
-    salida = {"status":"OK"}
-    return salida.encode('utf8')
+    salida = {"status": "OK"}
+    return salida
 
 @hug.get('/status')
 def status():
-    status = {"status":"OK"}
+    status = {"status": "OK"}
               
-    return status.encode('utf8')
+    return status
 
 if __name__ == '__main__':
     add.interface.cli()
