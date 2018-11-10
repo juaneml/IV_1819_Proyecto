@@ -10,7 +10,7 @@ import os
 
 """ Clase Noticia para el microservicio
     Tiene los atributos titulo, descrip, url y published
-    Para la clase Noticia optenemos los datos a través de la api del periódico El Mundo
+    Para la clase Noticia optenemos los datos a traves de la api del periodico El Mundo
     y almaceno los datos en un fichero que llamo datos.json y datos_m.json
 """
 class Noticia:
@@ -39,14 +39,14 @@ class Noticia:
 
     """      Título     """
 
-    """Devuelve el título de la noticia """
+    """Devuelve el titulo de la noticia """
     def get_titulo(self,string):
         try:
             return self.titulo[string]
         except:
             return False
 
-    """Cambia el título de la noticia"""
+    """Cambia el titulo de la noticia"""
     def set_titulo(self,string):
 
         if (type(string) != int):
@@ -55,7 +55,7 @@ class Noticia:
         else:
             return False
 
-    """Añade el titulo a de la noticias """
+    """Add el titulo a de la noticias """
     def add_titulo(self,string):
 
         if (type(string) != int):
@@ -66,14 +66,14 @@ class Noticia:
 
     """     Descripción     """
 
-    """Devuelve la descripción de la noticia """
+    """Devuelve la descripcion de la noticia """
     def get_descrip(self,des):
         try:
             return self.descrip[des]
         except:
             return False
 
-    """Cambia la descripción de la noticia """
+    """Cambia la descripcion de la noticia """
     def set_descrip(self,string):
 
         if(type(string)!= int):
@@ -82,7 +82,7 @@ class Noticia:
         else:
             return False
 
-    """Añade la descripción de la noticia """
+    """Add la descripcion de la noticia """
     def add_descrip(self,string):
 
         if(type(string) != int):
@@ -109,7 +109,7 @@ class Noticia:
         else:
             return False
 
-    """ Añade la url de la noticia"""
+    """ Add la url de la noticia"""
 
     def add_url(self,string):
 
@@ -119,7 +119,7 @@ class Noticia:
         else:
             return False
 
-    """     Fecha publicación       """
+    """     Fecha publicacion       """
 
     def get_publicado(self,publi):
         try:
@@ -136,7 +136,7 @@ class Noticia:
         else:
             return False
 
-    """ Añade fecha publicado """
+    """ Add fecha publicado """
 
     def add_publicado(self,string):
         if(type(string)!= int):
@@ -171,7 +171,7 @@ class Noticia:
     def num_noticias(self):
         return self.num_noti
 
-"""Clase Articulo que imprime las noticias e imprime el numero de artículos """
+"""Clase Articulo que imprime las noticias e imprime el numero de articulos """
 
 class Articulo:
     clase = Noticia()
