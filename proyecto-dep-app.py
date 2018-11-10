@@ -17,14 +17,14 @@ def get_template(name):
 
 @hug.cli()
 #@hug.local()
-@hug.get('/',charset='utf-8)
+@hug.get('/')
 def getEstado():
-    salida = {"status":"OK",charset='utf-8}
+    salida = {"status":"OK"}
     return salida.encode('utf8')
 
 @hug.get('/status')
 def status():
-    status = {"status":"OK",charset='utf-8}
+    status = {"status":"OK"}
               
     return status.encode('utf8')
 
