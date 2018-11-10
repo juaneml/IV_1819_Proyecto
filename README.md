@@ -40,4 +40,4 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
 ## Despliegue
-despligue https://proyecto-iv.herokuapp.com/
+URL despligue https://proyecto-iv.herokuapp.com/
