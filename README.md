@@ -12,8 +12,6 @@ Nos notificará del suceso y en la fecha que ha ocurrido.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://proyecto-iv.herokuapp.com/)
 
-Despligue https://proyecto-iv.herokuapp.com/
-
 ## Documentación del proyecto
 [Documentación](https://github.com/juaneml/IV_1819_Proyecto/tree/master/doc)
 
@@ -41,4 +39,5 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
-
+## Despliegue
+Despligue https://proyecto-iv.herokuapp.com/
