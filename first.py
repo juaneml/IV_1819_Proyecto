@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
 
 # first.py
 
@@ -202,7 +201,7 @@ class Articulo:
             print(''.join(self.clase.get_publicado(i)))
 
     def Imprime_noti(self):
-        print("\nEl número de articulos son : " + str(self.clase.num_noticias()) )
+        print("\nEl num de articulos son : " + str(self.clase.num_noticias()) )
 
     def Num_arti(self):
         return self.num_noti
