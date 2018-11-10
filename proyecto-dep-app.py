@@ -25,10 +25,8 @@ def getEstado():
 
 @hug.get('/status')
 def status():
-    status = {"status":"OK",
-              "noticias":{"ruta":"/status",
-               "valor":"JSON: devuelto" }
-            }
+    status = {"status":"OK"}
+              
     return status
 
 if __name__ == '__main__':
