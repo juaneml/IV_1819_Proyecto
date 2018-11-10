@@ -20,13 +20,13 @@ def get_template(name):
 @hug.get('/',charset='utf-8)
 def getEstado():
     salida = {"status":"OK",charset='utf-8}
-    return salida
+    return salida.encode('utf8')
 
 @hug.get('/status')
 def status():
     status = {"status":"OK",charset='utf-8}
               
-    return status
+    return status.encode('utf8')
 
 if __name__ == '__main__':
     add.interface.cli()
