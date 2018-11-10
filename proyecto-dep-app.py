@@ -16,17 +16,14 @@ def get_template(name):
     return template_engine.get_template(name)
 
 @hug.cli()
-#@hug.local()
 @hug.get('/')
 def getEstado():
     salida = {"status": "OK"}
-    salida = salida.decode('utf-8')
     return salida
 
 @hug.get('/status')
 def status():
-    status = {"status": "OK"}
-    status = status.decode('utf-8')          
+    status = {"status": "OK"}      
     return status
 
 if __name__ == '__main__':
