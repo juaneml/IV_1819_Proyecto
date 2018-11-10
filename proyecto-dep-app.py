@@ -17,7 +17,7 @@ def get_template(name):
     return template_engine.get_template(name)
 
 @hug.cli()
-@hug.local()
+#@hug.local()
 @hug.get('/')
 def getEstado():
     salida = {"status":"OK"}
@@ -26,10 +26,10 @@ def getEstado():
 @hug.get('/status')
 def status():
     status = {"status":"OK",
-              "noticias":{"ruta":"/noticias",
-               "valor":"HTML: devuelto" }
+              "noticias":{"ruta":"/status",
+               "valor":"JSON: devuelto" }
             }
     return status
 
 if __name__ == '__main__':
-    inicio()
+    add.interface.cli()
