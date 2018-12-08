@@ -6,8 +6,6 @@ python:
 # command to install dependencies
 install:
   - pip3 install -r requirements.txt
-  - pip3 install hug -U
-  - pip3 install Jinja2
 
 # command to run tests
 script: cd ./test && pytest
