@@ -1,5 +1,4 @@
 
 Hug==2.4.1
 pytest==3.9.3
-jinja2==2.10
 gunicorn
