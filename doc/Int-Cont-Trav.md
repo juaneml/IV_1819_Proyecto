@@ -23,7 +23,7 @@ python:
 install:
 	- pip install -r requirements.txt
 
-script: cd ./test && pytest
+script: cd ./test && pytest test_.py
 	
 ## Ejemplo de salida:
 ![travis.png](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/travis.png)
