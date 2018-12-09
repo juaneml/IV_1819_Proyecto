@@ -1,3 +1,2 @@
-web: gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
-
+web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
 
