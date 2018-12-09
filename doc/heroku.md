@@ -42,5 +42,9 @@ la ejecución de los tests.
    ~~~
    - Se ha añadido /status a nuestra aplicación y ejecutando el comando curl obtenemos la siguiente salida:
    ~~~
-   {"status:": "OK", "noticias": {"ruta": "/noticias", "valor": "HTML: devuelto"}}
+   {"status": "OK", "noticias": {"ruta": "/noticias", "valores": {"Titulo": "Granada, una ciudad con encanto", "Descrip":        "Granada tiene cada vez más visitantes para ver la Alhambra", "url": "www.ideal/es_un_ejemplo", "publicado": "7/11/2018",      "json": "devuelto"}}}
    ~~~
+  - Se ha añadido /noticias a nuestra aplicación y el resultado de salida es el siguiente:
+  ~~~
+   {"Noticia": {"Titulo": "Granada, una ciudad con encanto", "Descrip": "Granada tiene cada vez más visitantes para ver la        Alhambra", "url": "www.ideal/es_un_ejemplo", "publicado": "7/11/2018", "json": "devuelto"}}
+  ~~~
