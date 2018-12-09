@@ -5,11 +5,7 @@
 import hug
 import json
 import sys
-from first import *
-import jinja2
-from jinja2 import FileSystemLoader, Environment
-from jinja2 import Template
-
+from principal import *
 
 
 template_engine = Environment(loader=FileSystemLoader("templates"))
