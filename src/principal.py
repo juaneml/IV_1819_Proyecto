@@ -191,9 +191,9 @@ if __name__=='__main__':
     with open('../json/datos_m.json','r') as noti:
             lista_noticias = json.load(noti)
 
-    titular = Newsgroups()
-    titular.Crea_news(lista_noticias)
-    num_titular = titular.getNumTit()
+    newgroups = Newsgroups()
+    newgroups.Crea_news(lista_noticias)
+    num_groups = newgroups.getNumTit()
 
 
     for i in range(num_titular):
