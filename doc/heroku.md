@@ -27,7 +27,7 @@ la ejecución de los tests.
   ~~~ 
    web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
   ~~~
- - Indica que se mueva al directorio donde está la aplicación, directorio src, con el servidor web gunicorn ejecute la aplicación de python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
+ - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicacion, indica que se mueva al directorio donde está la aplicación, directorio src, con el servidor web gunicorn ejecute la aplicación de python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
 
  - Así ya tendremos a nuestra aplicación en la nube:
  
