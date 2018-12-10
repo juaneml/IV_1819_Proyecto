@@ -1,55 +1,40 @@
-
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import hug
 import json
 import sys
+#sys.path.append('../src/')
 from principal import *
 
 
-template_engine = Environment(loader=FileSystemLoader("templates"))
-def get_template(name):
-    return template_engine.get_template(name)
-
 @hug.cli()
-@hug.local()
 @hug.get('/')
 def getEstado():
     salida = {"status": "OK"}
     return salida
 
 @hug.get('/status')
-def getStatus():
-    status = {"status:": "OK",
-              "noticias" :
-              {
-               "ruta": "/noticias",
-               "valor": "HTML: devuelto"
-
-              }
-            }
+def status():
+    status = {"status": "OK",
+        "noticias":{
+        "ruta": "/noticias",
+        "valor": "{'Titulo': 'Granada, una ciudad con encanto',json: devuelto} }"
+    }
+    }
     return status
 
-@hug.cli()
-@hug.get('/noticias',output=hug.output_format.html)
-def inicio():
-    template = get_template("index.html")
+@hug.get('/noticias')
+def noticias():
+    noticia = {
+        "Noticia":{
 
-    noticia = Noticia() #diccionario
-    articulo = Articulo()
-    tam = noticia.num_noticias()
-    dic_noti ={}
-    lista_noti =[]
-
-    for i in range(tam):
-
-        lista_noti.append(noticia.get_titulo(i))
-        lista_noti.append(noticia.get_descrip(i))
-        lista_noti.append(noticia.get_url(i))
-        lista_noti.append(noticia.get_publicado(i))
-
-    return template.render(dic_noti=lista_noti)
-
+        "Titulo": "Granada, una ciudad con encanto",
+        "Descrip": "Granada tiene cada vez más visitantes para ver la Alhambra",
+        "url": "www.ideal/es_un_ejemplo",
+        "publicado": "7/11/2018",
+        "json":"devuelto"
+        }
+    }
+    return noticia
 if __name__ == '__main__':
-    inicio()
+    add.interface.cli()
