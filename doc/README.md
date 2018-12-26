@@ -21,4 +21,4 @@ con extensión .json que se optienen a partir de la [API del periódico del mund
 * Clases del proyecto
   * Clase Noticia, en esta clase se definen métodos para la gestión de datos obtenidos de un fichero con extensión .json, tales datos son el título de una noticia, la descripción, la url de la fuente de la noticia y la fecha de la publicación.
 
-  * Clase Articulo, con esta clase se hizo para la impresión de noticias así como comprobar que los datos almacenados en una lista han  sido correctos.
+  * Clase Newsgroups, clase que crea varias noticias.
