@@ -1,10 +1,10 @@
 # Despliegue de aplicación en heroku
 
-En el siguiente documento veremos los pasos para desplegar nuestra apliación.
+En el siguiente documento veremos los pasos para desplegar nuestra aplicación.
 
 ## Paso 1:
 - Nos registramos en [Heroku](https://www.heroku.com/)
-- Elegimos el nombre de nuestra apliación, en mi caso proyecto-iv
+- Elegimos el nombre de nuestra aplicación, en mi caso proyecto-iv
 ![create](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/create_new_app.png)
 
 ## Paso 2:
@@ -17,7 +17,8 @@ la ejecución de los tests.
 ![automatic_desploy](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/automatic_deploys.png)
 
 # Adaptamos el proyecto para la ejecución de heroku
-- Añadimos los requerimientos en el arquivo requirements.txt necesarios en mi caso son los siguientes :
+
+- Añadimos los requerimientos en el archivo requirements.txt necesarios en mi caso son los siguientes :
    ~~~
     Hug==2.4.1
     pytest==3.9.3
@@ -27,8 +28,8 @@ la ejecución de los tests.
   ~~~
    web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
   ~~~
-  
- - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicacion, indica que se mueva al directorio donde está la aplicación, directorio src, con el servidor web gunicorn ejecute la aplicación de python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
+
+ - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicación, indica que se mueva al directorio donde está la aplicación, directorio src,se indica que el proceso es un proceso web que va a recibir tráfico HTTP y que se ejecute la el fichero Python con nombre proyecto-dep_app,con el servidor web gunicorn ejecute la aplicación de Python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
 
  - Así ya tendremos a nuestra aplicación en la nube:
 
@@ -36,7 +37,7 @@ la ejecución de los tests.
 
 
  # Comprobamos que todo ha ido bien:
-  - En la ruta / de nuesta apliación abrimos el terminal y hacemos uso del comando curl y accedemos a la url que nos proporciona Heroku de    nuestra aplicación.
+  - En la ruta / de nuestra aplicación abrimos el terminal y hacemos uso del comando curl y accedemos a la url que nos proporciona Heroku de    nuestra aplicación.
    ~~~
    $curl https://proyecto-iv.herokuapp.com/
    {"status": "OK"}
