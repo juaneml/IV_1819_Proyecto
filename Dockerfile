@@ -1,5 +1,5 @@
 FROM python:3
-MAINTAINER juaneml <juaneml@correo.ugr.es>
+LABEL maintainer="juaneml@correo.ugr.es"
 WORKDIR src/
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
