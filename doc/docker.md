@@ -1,4 +1,4 @@
-#El despliegue en Docker
+# El despliegue en Docker
 
 - Nos dirigimos a create Repository  y creamos un repositorio.
 ![create](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/create_repository.png)
