@@ -1,0 +1,6 @@
+# Excluimos los archivos que no consideramos necesarios
+*git
+*doc
+*test*
+*.yml
+Procfile
