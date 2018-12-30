@@ -38,7 +38,8 @@ CMD cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
 *.yml
 Procfile
 ~~~~
-
+## Imagen de docker
+[docker](https://hub.docker.com/r/juaneml/iv-1819-proyecto)
 ## Desplegamos el contenedor en Heroku
 
 - Para hacer el desplieque hacemos uso de la [documentación](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml) disponible en heroku.
@@ -66,5 +67,13 @@ heroku stack:set container -a proyectoiv-docker
 git push heroku master
 ~~~
 
+<<<<<<< HEAD
 ### Ejemplos
 [Ejemplo](http://localhost:8000/una_noticia?noticia=Es%20una%20noticia%20interesante%20&lugar=Espa%C3%B1a)
+=======
+### Contenedor heroku
+[heroku docker](https://proyectoiv-docker.herokuapp.com/) nos devuelve 
+~~~
+{"status": "OK"}
+~~~
+>>>>>>> afe7dd79d30bfcfc76dc157c5eb9a3935fa52d48
