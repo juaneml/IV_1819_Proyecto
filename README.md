@@ -39,5 +39,11 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
+## Docker
+Contenedor:https://proyectoiv-docker.herokuapp.com/
+
+[Imagen DockerHub](https://hub.docker.com/r/juaneml/iv-1819-proyecto)
+- [Documentación](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/docker.md)
+
 ## Despliegue
 URL despliegue https://proyecto-iv.herokuapp.com/
