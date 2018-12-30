@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 import hug
 import json
-import sys
-#sys.path.append('../src/')
-from principal import *
 
 
 @hug.cli()
@@ -36,5 +33,10 @@ def noticias():
         }
     }
     return noticia
+
+@hug.get('/una_noticia')
+def una(noticia: hug.types.text,lugar: hug.types.text):
+
+    return {"Noticia":noticia,"lugar":lugar}
 if __name__ == '__main__':
-    add.interface.cli()
+    una.interface.cli()

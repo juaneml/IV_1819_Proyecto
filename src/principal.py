@@ -19,13 +19,15 @@ class Noticia:
     url = []
     published = []
     num_noti = 0
+    comentario = []
 
     def __init__(self):
         self.titulo = []
         self.descrip = []
         self.url = []
         self.published = []
-        self.num_noti
+        self.num_noti = 0
+        self.comentario = []
 
 
     """   ***  Título  ***   """
@@ -94,7 +96,7 @@ class Noticia:
     """ Cambia la url de la noticia"""
     def set_url(self,string):
 
-        if(type(strin) != int):
+        if(type(string) != int):
             self.url = string
             return True
         else:
@@ -134,12 +136,39 @@ class Noticia:
         else:
             return False
 
+    """Add comentario """
+    def add_coment(self,coment):
+        if(type(coment)!= int):
+            self.comentario.append(coment)
+            return True
+        else:
+            return False
+
+    """ get comentario """
+    def get_comentario(self,coment):
+        try:
+            return self.comentario[coment]
+        except:
+            return " "
+
+    """ set comentario """
+    def set_comentario(self,id_coment,string):
+
+        if(type(string)!= int):
+            print("cambio en set_comentario",id_coment,string)
+            self.comentario[id_coment] = string
+            return True
+        else:
+            return False
+
 
     """ Imprime la noticia """
     def to_s(self,i):
         tam = self.num_noti
-        print(''.join(self.get_titulo(i)),''.join(self.get_descrip(i)),
-        ''.join(self.get_url(i)),''.join(self.get_publicado(i)))
+        print(" Titulo:",''.join(self.get_titulo(i)),"\n","Descripción:",''.join(self.get_descrip(i)),"\n",
+        "Url:",''.join(self.get_url(i)),"\n","Fecha publicación:",''.join(self.get_publicado(i)),"\n",
+        "Comentario:",'',self.get_comentario(i),"\n")
+
 
 
 """Clase Newsgroups, clase que crea varias noticias """
@@ -148,7 +177,7 @@ class Newsgroups():
 
     def __init__(self):
         self.lista_noticias =[]
-        self.noticia
+        self.noticia = Noticia()
         self.cont = 0
 
     """Crea una noticia y se añade a la lista de noticicas """
@@ -169,11 +198,17 @@ class Newsgroups():
             if(i['url'] != None):
                 self.lista_noticias.append(self.noticia.add_url(i['url']))
             else:
-                self.lista_noticias.append(self.noticia.add_url( ""))
+                self.lista_noticias.append(self.noticia.add_url(" "))
             if(i['publishedAt']!=None):
                 self.lista_noticias.append(self.noticia.add_publicado(i['publishedAt']))
             else:
                 self.lista_noticias.append(self.noticia.add_publicado(" "))
+
+            if(self.noticia.get_comentario(i) != None):
+                self.lista_noticias.append(self.noticia.add_coment(self.noticia.get_comentario(i) ))
+            else:
+                self.lista_noticias.append(self.noticia.add_coment(" "))
+
             self.cont+=1
 
     """ Devuelve la noticia """
@@ -186,6 +221,40 @@ class Newsgroups():
     def getNumNot(self):
         return self.cont
 
+    """ Busca noticia """
+    def busca_not(self,id_not):
+        noticia = self.getNoticia()
+        cont = 0
+        es = False
+        exit = 0
+        while cont in range(self.getNumNot()) and not exit:
+            if(noticia.get_titulo(cont).find(id_not) != -1):
+                es = True
+                exit = cont
+            
+            cont=cont+1
+
+
+        if(es == False):
+            exit = -1
+
+        return exit
+
+    """ Add un comentario dado una subcadena """
+
+    def Set_news(self,lista,id_not,comentario):
+        lista = lista
+        id_titulo = self.busca_not(id_not)
+        for i in lista:
+
+            if(i['title'].find(self.noticia.get_titulo(id_titulo)) != -1 ):
+                self.lista_noticias.append(self.noticia.add_coment(comentario))
+                self.noticia.set_comentario(id_titulo,comentario)
+                print("Has añadido el comentario",self.noticia.get_comentario(id_titulo))
+
+            else:
+                self.lista_noticias.append(self.noticia.add_coment(""))
+
 
 if __name__=='__main__':
     with open('../json/datos_m.json','r') as noti:
@@ -193,13 +262,36 @@ if __name__=='__main__':
 
     newgroups = Newsgroups()
     newgroups.Crea_news(lista_noticias)
-    num_groups = newgroups.getNumTit()
+    num_groups = newgroups.getNumNot()
 
 
-    for i in range(num_titular):
+    for i in range(num_groups):
 
         print("***********  NOTICIA  *************")
-        titular.getNoticia().to_s(i)
+        newgroups.getNoticia().to_s(i)
         print("******************************","\n")
 
-    print("Numero de Noticias "," ",titular.getNumTit() )
+
+
+    print("Numero de Noticias "," ",newgroups.getNumNot() )
+
+
+    while True:
+      print("¿Quieres añadir un comentario, SI o NO?")
+      res = input()
+      print("res", res)
+      if (res == 'SI' or res == 'si'):
+          print("Dame datos del titulo a buscar: ")
+          tit_noticia = input()
+          print("Ahora el comentario")
+          comentario=input()
+          newgroups.Set_news(lista_noticias,tit_noticia,comentario)
+      else:
+          break
+
+
+    for i in range(num_groups):
+
+        print("***********  NOTICIA  *************")
+        newgroups.getNoticia().to_s(i)
+        print("******************************","\n")
