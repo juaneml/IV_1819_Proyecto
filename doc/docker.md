@@ -67,7 +67,7 @@ heroku stack:set container -a proyectoiv-docker
 git push heroku master
 ~~~
 
-<<<<<<< HEAD
+
 ### Ejemplos
 [Ejemplo](http://localhost:8000/una_noticia?noticia=Es%20una%20noticia%20interesante%20&lugar=Espa%C3%B1a)
 =======
