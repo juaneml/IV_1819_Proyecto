@@ -27,9 +27,10 @@ def get_varias(num):
         return {"Número no permitido, debe ser como máximo " : num_groups}
     else:
         for i in range(num):
-            lista.append({"Noticia":{newgroups.getNoticia().to_s(i)}})
+            lista.append("Noticia")
+            lista.append(newgroups.getNoticia().to_s(i))
     return lista
-    
+
 @hug.get()
 def get_all():
     lista = []
