@@ -156,7 +156,7 @@ class Noticia:
 
         if(type(string)!= int):
             print("cambio en set_comentario",id_coment,string)
-            self.comentario[id_coment] = string
+            self.comentario[int(id_coment)] = string
             return True
         else:
             return False
@@ -165,11 +165,14 @@ class Noticia:
     """ Imprime la noticia """
     def to_s(self,i):
         tam = self.num_noti
-        print(" Titulo:",''.join(self.get_titulo(i)),"\n","Descripción:",''.join(self.get_descrip(i)),"\n",
+        print("Titulo:",''.join(self.get_titulo(i)),"\n","Descripción:",''.join(self.get_descrip(i)),"\n",
         "Url:",''.join(self.get_url(i)),"\n","Fecha publicación:",''.join(self.get_publicado(i)),"\n",
         "Comentario:",'',self.get_comentario(i),"\n")
-
-
+        
+        return {"Titulo": self.get_titulo(i) ,
+        "Descripcion": self.get_descrip(i),
+        "Url": self.get_url(i),"Fecha publicacion": self.get_publicado(i),
+        "Comentario": self.get_comentario(i)}
 
 """Clase Newsgroups, clase que crea varias noticias """
 class Newsgroups():
@@ -228,10 +231,12 @@ class Newsgroups():
         es = False
         exit = 0
         while cont in range(self.getNumNot()) and not exit:
+
             if(noticia.get_titulo(cont).find(id_not) != -1):
+
                 es = True
                 exit = cont
-            
+
             cont=cont+1
 
 
@@ -244,16 +249,16 @@ class Newsgroups():
 
     def Set_news(self,lista,id_not,comentario):
         lista = lista
-        id_titulo = self.busca_not(id_not)
+
         for i in lista:
 
-            if(i['title'].find(self.noticia.get_titulo(id_titulo)) != -1 ):
+            if(i['title'].find(str(self.noticia.get_titulo(int(id_not)))) != -1 ):
                 self.lista_noticias.append(self.noticia.add_coment(comentario))
-                self.noticia.set_comentario(id_titulo,comentario)
-                print("Has añadido el comentario",self.noticia.get_comentario(id_titulo))
+                self.noticia.set_comentario(id_not,comentario)
+
 
             else:
-                self.lista_noticias.append(self.noticia.add_coment(""))
+                self.lista_noticias.append(self.noticia.add_coment(" "))
 
 
 if __name__=='__main__':
