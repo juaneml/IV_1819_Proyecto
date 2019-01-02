@@ -57,7 +57,7 @@ def all():
 
     salida = api_function.get_all()
 
-    return ''.join(salida)
+    return salida
 
 @hug.get()
 def busca(dato):
