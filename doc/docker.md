@@ -11,7 +11,7 @@
 seleccionamos nuestro respositorio, nos vamos a builds, configure automated builds y seleccionamos autobuild y build caching.
 ![autobuild](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/autobuild.png)
 
-- Necesitamos crear un fichero con nombre Dockerfile en nuestro repositorio de github, para que docker pueda construir nuestro contenedor, tenemos que especificarle la imagen que vamos a usar así como las depencencias y requisitos necesarios.
+- Necesitamos crear un fichero con nombre Dockerfile en nuestro repositorio de github, para que docker pueda construir nuestro contenedor, tenemos que especificarle la imagen que vamos a usar, así como las dependencias y requisitos necesarios, para la creación del DockerFile hemos visitado la [documentación](https://hub.docker.com/_/python/).
 
 El Dockerfile quedaría tal que así:
 
@@ -19,14 +19,19 @@ El Dockerfile quedaría tal que así:
 FROM python:3
 LABEL maintainer="juaneml@correo.ugr.es"
 WORKDIR src/
-COPY . .
+
+COPY requirements.txt ./
+
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
 EXPOSE 80
-CMD cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
+CMD cd src && gunicorn proyecto-dep-app:__hug_wsgi__
 ~~~~
 
 
-- Se usa FROM python:3, la imagen oficial de python ya que está optimizada. Con RUN pip instalamos el lenguaje, así como los requisitos que se necesiten. Se copia todo el trabajo realizado y se expone, usando EXPOSE, un puerto.
+- Se usa FROM python:3, uso esta imagen y no otra porque tiene una gran cantidad de paquetes Debian comunes y así pueda ahorrarme que tenga problemas de dependencias. Con RUN pip instalamos el lenguaje, así como los requisitos que se necesiten. Se copia todo el trabajo realizado y se expone, usando EXPOSE, un puerto.
 
 - También creamos otro fichero .dockerignore para evitar que se copien ficheros innecesarios tales como los test y la configuraciones tanto para travis y heroku, tal fichero quedaría tal que así:
 
@@ -42,7 +47,7 @@ Procfile
 [docker](https://hub.docker.com/r/juaneml/iv-1819-proyecto)
 ## Desplegamos el contenedor en Heroku
 
-- Para hacer el desplieque hacemos uso de la [documentación](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml) disponible en heroku.
+- Para hacer el despliegue hacemos uso de la [documentación](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml) disponible en heroku.
 
 - Necesitamos crear el fichero heroku.yml, este nos permite decirle a Heroku que vamos a crear una imagen a partir del fichero DockerFile.
 
@@ -62,7 +67,8 @@ heroku stack:set container -a proyectoiv-docker
 ~~~
 
 - Indicamos a heroku que es un contenedor y el nombre de la aplicación proyectoiv-docker.
-- Por último actuliazamos ejecutando el comando:
+- Por último, actualizamos ejecutando el comando:
+
 ~~~
 git push heroku master
 ~~~
@@ -70,11 +76,11 @@ git push heroku master
 
 ### Ejemplos
 
-[Ejemplo](http://localhost:8000/una_noticia?noticia=Es%20una%20noticia%20interesante%20&lugar=Espa%C3%B1a)
+[Ejemplo get](https://proyectoiv-docker.herokuapp.com/una_noticia?i=2)
+[Ejemplo put](https://proyectoiv-docker.herokuapp.com/sustituir_dato?i=2&new=nuevo)
 
 ### Contenedor heroku
-[heroku docker](https://proyectoiv-docker.herokuapp.com/) nos devuelve 
+[heroku docker](https://proyectoiv-docker.herokuapp.com/) nos devuelve
 ~~~
 {"status": "OK"}
 ~~~
-
