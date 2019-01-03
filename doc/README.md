@@ -17,6 +17,7 @@ con extensión .json que se optienen a partir de la [API del periódico del mund
 * [Heroku](https://www.heroku.com/), plataforma como servicio (PaaS) para integración continua.
   * Plataforma de servicio en la Nube, integración del proyecto en pocos pasos, soporta amplia gama de lenguajes para distintos tipos de necesidades.
 
+* [Docker](https://hub.docker.com/), plataforma para compartir o encontrar imágenes de contenedores. La usamos para la creación de un contenedor de nuestra aplicación.
 
 * Clases del proyecto
   * Clase Noticia, en esta clase se definen métodos para la gestión de datos obtenidos de un fichero con extensión .json, tales datos son el título de una noticia, la descripción, la url de la fuente de la noticia y la fecha de la publicación.
