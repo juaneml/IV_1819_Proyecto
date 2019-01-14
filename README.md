@@ -49,8 +49,6 @@ git clone https://github.com/juaneml/IV_1819_Proyecto.git
 
 
 
-Por último, a modo local, para comprobar que todo funciona correctamente o ver si algún test no ha pasado la prueba, desde el directorio /marcador ejecutamos el comando pytest.
-
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
