@@ -28,6 +28,11 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 - Además los test pasan por el servicio de integración continua [Travis-CI](https://travis-ci.org/juaneml/IV_1819_Proyecto) que se ha configurado para el repositorio del proyecto.
 - [Configuración](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/Int-Cont-Trav.md)
 
+### Ejecutar los test
+~~~
+pytest test_.py
+pytest test_app.py
+~~~
 ## Herramientas a Usar
 
 ### Lenguaje
@@ -45,8 +50,10 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 
 - Para poder instalar este microservicio, clona el repositorio:
 
+~~~
 git clone https://github.com/juaneml/IV_1819_Proyecto.git
-
+pip3 install -r requirements.txt
+~~~
 
 
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
