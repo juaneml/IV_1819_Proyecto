@@ -176,7 +176,7 @@ Enlaces consultados:
 ~~~
 
 
-#Ansible
+# Ansible
 
 - Para aportar el provisionamiento a la máquina virtual hago uso de ansible.
 
