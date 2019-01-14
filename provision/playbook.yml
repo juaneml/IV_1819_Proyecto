@@ -3,63 +3,40 @@
   become: yes
   tasks:
 
-  # git
-    - name: Actualiza la caché de los repositorios e Instala git
-      apt:
-        name: git
-        state: present
-        update_cache: yes
 
-    - name: fail the play if the previous command did not succeed
-      fail:
-        msg: "the command failed"
-      when: " 'FAILED' In git install "
-
- # Python 3
-    - name: repositorios necesario deadsnakes PPA python3 y acualización
-      apt:
-        apt_repository: repo=ppa:deadsnakes/ppa state=present
-        update_cache: yes
-
-    - name: fail the paly if the previos command did not succeed
-      fail:
-        msg: "the repo failed"
-      when: "FAILED in apt-repository"
-
-    - name: Instalación python3
-      apt:
-        name: python3
-        state: latest
-
-    - name: fail the paly if the previos command did not succeed
-      fail:
-        msg: "the repo failed"
-      when: "FAILED in install python3"
+    # Instalacion de git
+    - name: Instala git
+      apt: pkg=git state=present
 
 
-  # pip3
-    - name: Instalación pip3
-      easy_install:
-        name: pip3
-        state: latest
-
-    - name: fail the paly if the previos command did not succeed
-      fail:
-        msg: "the repo failed"
-      when: "FAILED in install pip3"
-
+    # Clonamos Repositorio
     - name: Clonar nuestro repositorio en github
-      git: repo=https://github.com/juaneml/IV_1819_Proyecto.git
+      git:
+        repo: https://github.com/juaneml/IV_1819_Proyecto.git
+        dest: iv1819proyecto/
 
-    - name: fail the paly if the previos command did not succeed
-      fail:
-        msg: "the repo failed"
-      when: "FAILED in clone Repositorio"
+
+    # Instalación de  Python 3
+
+    # Repositorios necesarios para python3
+    - name: repositorios necesario deadsnakes PPA python3
+      apt_repository: repo=ppa:deadsnakes/ppa state=present
+
+    #Actualzamos repositorio
+    - name: update repositorio
+      command: sudo apt-get update
+
+    #Instalamos python3
+    - name: Instalación python3
+      apt: pkg=python3.6 state=present
+
+
+  # Instalamos pip3
+
+    - name: Instalación pip3
+      apt: pkg=python3-pip state=latest
+
+  # Instalamos Requirements necesarios para nuestro microservicio
 
     - name: Install requirements.txt
-      command: pip3 install -r requirements.txt
-
-    - name: fail the paly if the previos command did not succeed
-      fail:
-        msg: "the repo failed"
-      when: "FAILED in install requirements"
+      command: pip3 install -r ./iv1819proyecto/requirements.txt
