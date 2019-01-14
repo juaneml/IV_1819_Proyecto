@@ -10,6 +10,9 @@ def GuardaVersionAnterior():
 def EliminarVersionAnterior():
     run('rm -rf ./oldiv1819proyecto')
 
+def EliminarVersion():
+    run('rm -rf ./1819proyecto')
+    
 def InstallReq():
     run('pip3 install -r ./iv1819proyecto/requirements.txt')
 
