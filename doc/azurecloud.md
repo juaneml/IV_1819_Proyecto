@@ -3,7 +3,7 @@
 - Para llevar a cabo el despliegue tenemos que hacer la instalación de herramientas tales como,
 [Vagrant](https://www.vagrantup.com/),[ansible](https://www.ansible.com/),[fabric](https://get.fabric.io/)
 
-##Azure
+## Azure
 - Antes de comenzar a usar azure y poder desplegar nuestro servicio necesitamos:
 Instalar azure [cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 que nos va a permitir conectarnos a nuestra suscripción de azure y crear nuestra máquina virtual.
@@ -176,7 +176,7 @@ Enlaces consultados:
 ~~~
 
 
-#Ansible
+# Ansible
 
 - Para aportar el provisionamiento a la máquina virtual hago uso de ansible.
 
@@ -245,7 +245,7 @@ Enlaces consultados:
 - Como uso python3 instalo como dice la [documentación](https://docs.python-guide.org/starting/install3/linux/)
 - Para añadir el repositorio consulto[1](https://docs.python-guide.org/starting/install3/linux/) y consulto[2](https://blog.jetbrains.com/pycharm/2017/12/developing-in-a-vm-with-vagrant-and-ansible/)
 
-#Fabric
+## Fabric
 
 Para el despliegue y ejecución de la aplicación, hago uso de Fabric.
 
@@ -308,4 +308,4 @@ def StopApp():
 
 # Resultados
 
-[DNSstatus](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/dns_status_ok.png)
+![DNSstatus](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/dns_status_ok.png)
