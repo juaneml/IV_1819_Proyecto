@@ -1,0 +1,65 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+
+  # git
+    - name: Actualiza la caché de los repositorios e Instala git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+
+    - name: fail the play if the previous command did not succeed
+      fail:
+        msg: "the command failed"
+      when: " 'FAILED' In git install "
+
+ # Python 3
+    - name: repositorios necesario deadsnakes PPA python3 y acualización
+      apt:
+        apt_repository: repo=ppa:deadsnakes/ppa state=present
+        update_cache: yes
+
+    - name: fail the paly if the previos command did not succeed
+      fail:
+        msg: "the repo failed"
+      when: "FAILED in apt-repository"
+
+    - name: Instalación python3
+      apt:
+        name: python3
+        state: latest
+
+    - name: fail the paly if the previos command did not succeed
+      fail:
+        msg: "the repo failed"
+      when: "FAILED in install python3"
+
+
+  # pip3
+    - name: Instalación pip3
+      easy_install:
+        name: pip3
+        state: latest
+
+    - name: fail the paly if the previos command did not succeed
+      fail:
+        msg: "the repo failed"
+      when: "FAILED in install pip3"
+
+    - name: Clonar nuestro repositorio en github
+      git: repo=https://github.com/juaneml/IV_1819_Proyecto.git
+
+    - name: fail the paly if the previos command did not succeed
+      fail:
+        msg: "the repo failed"
+      when: "FAILED in clone Repositorio"
+
+    - name: Install requirements.txt
+      command: pip3 install -r requirements.txt
+
+    - name: fail the paly if the previos command did not succeed
+      fail:
+        msg: "the repo failed"
+      when: "FAILED in install requirements"
