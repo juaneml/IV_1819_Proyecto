@@ -30,7 +30,7 @@ def MicroservicioSecure():
 def MicroservicioClean():
     # Eliminamos la carpeta almacenada y hacemos un clonacion del
     # repositorio
-    EliminarVersionAnterior()
+    EliminarVersion()
     ClonRepo()
 
 def LanzarApp():
