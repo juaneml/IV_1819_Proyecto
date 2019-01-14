@@ -22,6 +22,9 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 
 ## Test
 - En el proyecto se hace uso de tests, se hace uso de [Pytest](https://docs.pytest.org/en/latest/), el nombre del test es [test_.py](https://github.com/juaneml/IV_1819_Proyecto/blob/master/test/test_.py)
+
+- El el proyecto se hace uso de un segundo test, [test_app.py](https://github.com/juaneml/IV_1819_Proyecto/blob/master/test/test_app.py) donde se testean las urls.
+
 - Además los test pasan por el servicio de integración continua [Travis-CI](https://travis-ci.org/juaneml/IV_1819_Proyecto) que se ha configurado para el repositorio del proyecto.
 - [Configuración](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/Int-Cont-Trav.md)
 
@@ -36,6 +39,18 @@ En el proyecto hay dos clases Noticia y Articulo, se usa la lectura de un ficher
 
 ### Base de datos
 - Para la base de datos voy a utilizar [Mysql](https://www.mysql.com/) .
+
+
+## Instalación
+
+- Para poder instalar este microservicio, clona el repositorio:
+
+git clone https://github.com/juaneml/IV_1819_Proyecto.git
+
+
+
+Por último, a modo local, para comprobar que todo funciona correctamente o ver si algún test no ha pasado la prueba, desde el directorio /marcador ejecutamos el comando pytest.
+
 ## Plataforma Heroku como servicio (PaaS) para la integración continua
 - Para saber como configurar [ver](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/heroku.md)
 
@@ -45,5 +60,11 @@ Contenedor:https://proyectoiv-docker.herokuapp.com/
 [Imagen DockerHub](https://hub.docker.com/r/juaneml/iv-1819-proyecto)
 - [Documentación](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/docker.md)
 
-## Despliegue
+## Despliegue en Heroku
 URL despliegue https://proyecto-iv.herokuapp.com/
+
+
+## Despliegue azure
+
+- Despliegue final: http://iv1819noticias.westeurope.cloudapp.azure.com
+- Para consultar la documentación [consulta](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/azurecloud.md)
