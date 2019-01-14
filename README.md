@@ -71,5 +71,5 @@ URL despliegue https://proyecto-iv.herokuapp.com/
 
 ## Despliegue azure
 
-- Despliegue final: http://iv1819noticias.westeurope.cloudapp.azure.com
+- Despliegue final: http://51.144.87.184/
 - Para consultar la documentación [consulta](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/azurecloud.md)
