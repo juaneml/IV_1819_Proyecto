@@ -254,7 +254,7 @@ Mi playbook.yml tiene el siguiente contenido:
     #Actualizamos repositorios
 
     - name: update repositorio
-      apt:
+      a
         update_cache: yes
       become: yes
 
@@ -392,7 +392,7 @@ fab -f despliegue/fabfile.py -H vagrant@ip_maquina_azure LanzarApp
 
 # Resultados
 
-## Si lanzamos fabric con los acentos en los comentarios obtnemos el siguiente error como podemos ver en la siguiente captura
+## Si lanzamos fabric con los acentos en los comentarios obtenemos el siguiente error como podemos ver en la siguiente captura
 ![errorFab](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/errores_acentos_fabfile.png)
 
 - Por eso en los comentarios lo dejamos sin acentos ni caracteres especiales
