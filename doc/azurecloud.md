@@ -48,7 +48,7 @@ debe ser similar a la siguiente:
 }
 ~~~
 
-Los valores tenant, appIdy se passwordasignan a los valores de configuración azure.tenant_id, azure.client_idy azure.client_secreten su archivo o variables de entorno Vagrant.
+Los valores tenant, appIdy se password asignan a los valores de configuración azure.tenant_id, azure.client_idy azure.client_secreten su archivo o variables de entorno Vagrant.
 
 
 ## Creación del Vagrantfile
@@ -133,6 +133,7 @@ azure.tcp_endpoints = 80
 ~~~
 
 - El nombre de nuestra máquina virtual es iv1819noticias
+
 - Con un tamaño Standard_DS2_v2 "que nos proporciona Uso equilibrado de la CPU en proporción de memoria. Ideal para desarrollo y pruebas, bases de datos pequeñas o medianas, y servidores web de tráfico bajo o medio". [consultado](https://docs.microsoft.com/es-es/azure/virtual-machines/windows/sizes)
 
 ~~~
@@ -140,7 +141,7 @@ azure.location = 'westeurope'
 ~~~
 - Le indicamos dónde queremos alojar nuestra máquina.
 
-- Con vm_image_urn le indicamos la imagen de la máquina virtual
+- Con vm_image_urn le indicamos la imagen de la máquina virtual.
 ~~~
 azure.vm_image_urn = 'canonical:ubuntuserver:16.04.0-LTS:latest'
 ~~~
@@ -204,6 +205,7 @@ Enlaces consultados:
 ~~~
 
 ### Para parar nuestra máquina virtual ejecutamos el comando:
+
 - Apagar
 
 ~~~
@@ -215,7 +217,7 @@ Enlaces consultados:
 
 - Para aportar el provisionamiento a la máquina virtual hago uso de ansible.
 
-Ansible lo que nos permite una vez creada la máquina provisionar de utilidades que necesita nuestra máquina, de forma que automaticemos el aprovisionamiento, tales como instalaciones de paquetes como pip3,git, la clonación de nuestro repositorio y la instalación de los requirements necesarios definidos en nuestro repositorio y que nuestra máquina necesita para desplegarse y lanzar nuestro microservicio.
+Ansible lo que nos permite una vez creada la máquina provisionar de utilidades que necesita nuestra máquina, de forma que automaticemos el aprovisionamiento, tales como instalaciones de paquetes como pip3, git, la clonación de nuestro repositorio y la instalación de los requirements necesarios definidos en nuestro repositorio y que nuestra máquina necesita para desplegarse y lanzar nuestro microservicio.
 
 - El archivo necesario tiene extensión .yml tiene el nombre de [playbook.yml](https://github.com/juaneml/IV_1819_Proyecto/blob/master/provision/playbook.yml)
 
@@ -309,7 +311,7 @@ Mi [fabfile](https://github.com/juaneml/IV_1819_Proyecto/blob/master/despliegue/
 ~~~
 from fabric.api import *
 
-#Muestra el estado del DNS de nuestra app
+# Muestra el estado del DNS de nuestra app
 
 def StatusDns():
     run('curl http://iv1819noticias.westeurope.cloudapp.azure.com/status')
