@@ -199,25 +199,40 @@ Mi playbook.yml tiene el siguiente contenido:
 
 
     # Clonamos Repositorio
+
     - name: Clonar nuestro repositorio en github
       git:
         repo: https://github.com/juaneml/IV_1819_Proyecto.git
         dest: iv1819proyecto/
+      become: no
 
 
     # Instalación de  Python 3
 
     # Repositorios necesarios para python3
+
     - name: repositorios necesario deadsnakes PPA python3
       apt_repository: repo=ppa:deadsnakes/ppa state=present
 
-    #Actualzamos repositorio
-    - name: update repositorio
-      command: sudo apt-get update
+      become: yes
 
+    #Actualizamos repositorios
+
+    - name: update repositorio
+      apt:
+        update_cache: yes
+      become: yes
+
+    #upgrade repositorios
+    - name: upgrade all packets to the last version
+      apt:
+        upgrade: dist
+      become: yes
     #Instalamos python3
+
     - name: Instalación python3
       apt: pkg=python3.6 state=present
+      become: yes
 
 
   # Instalamos pip3
@@ -225,10 +240,14 @@ Mi playbook.yml tiene el siguiente contenido:
     - name: Instalación pip3
       apt: pkg=python3-pip state=latest
 
+      become: yes
+
   # Instalamos Requirements necesarios para nuestro microservicio
 
     - name: Install requirements.txt
       command: pip3 install -r ./iv1819proyecto/requirements.txt
+
+      become: yes
 
 ~~~
 
@@ -247,48 +266,73 @@ Enlaces consultados:
 
 ## Fabric
 
-Para el despliegue y ejecución de la aplicación, hago uso de Fabric.
+- Para el despliegue y ejecución de la aplicación, hago uso de Fabric.
+Nos permite ejecutar comandos de shell de forma remota a través de SSH.
 
-Mi fabfile tiene el siguiente contenido:
+
+Mi [fabfile](https://github.com/juaneml/IV_1819_Proyecto/blob/master/despliegue/fabfile.py) tiene el siguiente contenido:
 ~~~
 from fabric.api import *
 
-#Muestra el estado del DNS de nuestra app, si
+#Muestra el estado del DNS de nuestra app
+
 def StatusDns():
     run('curl http://iv1819noticias.westeurope.cloudapp.azure.com/status')
+
+# Funcion para mantener la version anterior del microservicio
 
 def GuardaVersionAnterior():
     run('cp -r ./iv1819proyecto oldiv1819proyecto')
 
+# Funcion para eliminar la version anterior
 def EliminarVersionAnterior():
     run('rm -rf ./oldiv1819proyecto')
 
+# Funcion para eliminar el microservicio
 def EliminarVersion():
-    run('rm -rf ./1819proyecto')
+    run('rm -rf ./iv1819proyecto')
 
+# Funcion para instalar requirements
 def InstallReq():
     run('pip3 install -r ./iv1819proyecto/requirements.txt')
 
+# Funcion para clonar el repositorio
 def ClonRepo():
     run('git clone https://github.com/juaneml/IV_1819_Proyecto.git iv1819proyecto/')
+
+# Funcion que actualiza el microservicio guardando una version anterior  
+# Para ello hacemos la llamada de la funcion GuardaVersionAnterior
+# Posteriormente clonamos el repositorio del microservicio con la funcion ClonRepo
+# Por ultimo instalamos requirements haciendo uso de la funcion InstallReq
 
 def MicroservicioSecure():
     ## Se guarda la version anterior
     GuardaVersionAnterior()
-    # Clonamos nuestro repositorio de github
+    # Clonamos nuestro respotorio de github
+    # Eliminamos contenido
+    EliminarVersion()
     ClonRepo()
     ## Instalamos requirements.txt
     InstallReq()
 
+# Funcion que actualiza el microservicio  sin la version anterior  
+# Para ello hacemos la llamada de la funcion EliminarVersion
+# Posteriormente clonamos el repositorio del microservicio con la funcion ClonRepo
+# Por ultimo instalamos requirements haciendo uso de la funcion InstallReq
+
 def MicroservicioClean():
-    # Eliminamos la carpeta almacenada y hacemos un clonación del
+    # Eliminamos la carpeta almacenada y hacemos un clonacion del
     # repositorio
     EliminarVersion()
     ClonRepo()
+    ## Instalamos requirements.txt
+    InstallReq()
 
+# Funcion para iniciar el microservicio
 def LanzarApp():
     run('cd ./iv1819proyecto/src/ && sudo gunicorn proyecto-dep-app:__hug_wsgi__ -b 0.0.0.0:80')
 
+#Funcion para parar el microservicio
 def StopApp():
     run('sudo pkill -f gunicorn')
 ~~~
@@ -305,7 +349,47 @@ def StopApp():
 - El método StopApp, detenemos la aplicación.
 
 
+- Para realizar el despliegue del microservicio en azure ejecutamos el comando:
+~~~
+fab -f despliegue/fabfile.py -H vagrant@ip_maquina_azure LanzarApp
+~~~
+
 
 # Resultados
 
+## Si lanzamos fabric con los acentos en los comentarios obtnemos el siguiente error como podemos ver en la siguiente captura
+![errorFab](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/errores_acentos_fabfile.png)
+
+- Por eso en los comentarios lo dejamos sin acentos ni caracteres especiales
+
+## Iniciar microservicio
+![LanzarApp](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/fab_lazarApp.png)
+
+- Como podemos ver en la siguiente captura el microservicio está iniciado.
+## Navegador
+![LanzarApp2](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/lanzarApp2.png)
+
+## StatusDns
 ![DNSstatus](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/dns_status_ok.png)
+
+
+## Para actualizar el microservicio y conservar la versión anterior con la función MicroservicioSecure, podemos ver la salida en las siguientes captura:
+
+![micro1](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/microsecure_1.png)
+
+![micro2](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/microsecure_2.png)
+
+![micro3](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/micro_secure3.png)
+
+## Como podemos comprobar en la máquina virtual mediante la conexión ssh, podemos comprobar que se ha realizado con éxito.
+![micro4](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/microsecure_4.png)
+
+## Con la función EliminarVersion eliminamos la versión que tenemos en la máquina virtual, muy útil si queremos clonar el repositorio de nuevo.
+
+![elimiarVersion](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/eliminarVersion.png)
+
+## Parar el microservicio
+
+![StopApp](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/stopApp.png)
+
+![Documentación](http://www.fabfile.org/)
