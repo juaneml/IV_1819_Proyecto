@@ -373,7 +373,7 @@ fab -f despliegue/fabfile.py -H vagrant@ip_maquina_azure LanzarApp
 ![DNSstatus](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/dns_status_ok.png)
 
 
-## Para actualizar el microservicio y conservar la versión anterior con la función MicroservicioSecure, podemos ver la salida en las siguientes captura:
+## Para actualizar el microservicio y conservar la versión anterior con la función MicroservicioSecure, podemos ver la salida en las siguientes capturas:
 
 ![micro1](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/microsecure_1.png)
 
@@ -392,4 +392,4 @@ fab -f despliegue/fabfile.py -H vagrant@ip_maquina_azure LanzarApp
 
 ![StopApp](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/stopApp.png)
 
-![Documentación](http://www.fabfile.org/)
+[Documentación](http://www.fabfile.org/)
