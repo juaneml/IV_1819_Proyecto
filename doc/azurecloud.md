@@ -79,7 +79,7 @@ vagrant box add cloud_azure https://github.com/azure/vagrant-azure/raw/v2.0/dumm
 - Con el siguiente comando le estamos diciendo a vagrant que cree un box llamado cloud_azure indicándole el destino donde está y el proveedor azure.
 
 
-- Mi Vagrantfile quedaría como sigue:
+- Mi [Vagrantfile](https://github.com/juaneml/IV_1819_Proyecto/blob/master/Vagrantfile) quedaría como sigue:
 ~~~
 Vagrant.configure('2') do |config|
   config.vm.box = "cloud_azure"
@@ -140,11 +140,35 @@ azure.location = 'westeurope'
 ~~~
 - Le indicamos dónde queremos alojar nuestra máquina.
 
-- Por último le decimos que vamos a provisionar con ansible con :
+- Con vm_image_urn le indicamos la imagen de la máquina virtual
+~~~
+azure.vm_image_urn = 'canonical:ubuntuserver:16.04.0-LTS:latest'
+~~~
+
+- Con  dns_name el nombre del dns:
+~~~
+ azure.dns_name = 'iv1819noticias'
+~~~
+
+- Con resource_group_name el grupo de recursos:
+~~~
+resource_group_name = 'iv1819noticias'
+~~~
+
+- Evitamos que busque actualizaciones
+~~~
+vm.box_check_update 
+~~~
+
+- Por último le decimos que vamos a provisionar con ansible, le indicamos el modo de compatibilidad y la versión
+el resultado es el siguiente:
 ~~~
 config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "provision/playbook.yml"
-end
+    ansible.compatibility_mode = "2.0"
+    ansible.version = "2.7.5"
+    ansible.playbook = "provision/playbook.yml"
+
+  end
 ~~~
 
 - También necesitamos instalar el plugin de azure para vagrant con el comando:
