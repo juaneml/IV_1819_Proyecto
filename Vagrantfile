@@ -1,4 +1,3 @@
-
 Vagrant.configure('2') do |config|
   config.vm.box = "cloud_azure"
 
@@ -15,14 +14,25 @@ Vagrant.configure('2') do |config|
     azure.vm_name = 'iv1819noticias'
     azure.vm_size = 'Standard_DS2_v2'
     azure.location = 'westeurope'
-    azure.tcp_endpoints = 80
+    azure.tcp_endpoints = "80"
+    azure.resource_group_name = 'iv1819noticias'
+    azure.vm_image_urn = 'canonical:ubuntuserver:16.04.0-LTS:latest'
+
+    # Evitar que busque actualizaciones
+    config.vm.box_check_update = false
+
+    # dns_name
+    azure.dns_name = 'iv1819noticias'
 
 
   end
 
   # Configuración  para provisionar con ansible
   config.vm.provision "ansible" do |ansible|
+    ansible.compatibility_mode = "2.0"
+    ansible.version = "2.7.5"
     ansible.playbook = "provision/playbook.yml"
+
   end
 
 end
