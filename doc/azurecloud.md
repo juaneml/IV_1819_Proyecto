@@ -290,6 +290,10 @@ Mi playbook.yml tiene el siguiente contenido:
 
 ~~~
 
+- Para comprobar que hemos escrito bien el playbook.yml, ejecutamos el siguiente comando:
+~~~
+ansible-playbook provision/playbook.yml --syntax-check
+~~~
 - Si queremos volver a provisionar una vez creada nuestra máquina, podemos hacerlo mediante al comando:
 ~~~
 vagrant provision
