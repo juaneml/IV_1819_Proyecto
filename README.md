@@ -72,4 +72,5 @@ URL despliegue https://proyecto-iv.herokuapp.com/
 ## Despliegue azure
 
 - Despliegue final: 23.97.233.73
+
 - Para consultar la documentación [consulta](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/azurecloud.md)
