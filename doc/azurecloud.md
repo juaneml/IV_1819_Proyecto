@@ -48,7 +48,7 @@ debe ser similar a la siguiente:
 }
 ~~~
 
-Los valores tenant, appIdy se password asignan a los valores de configuración azure.tenant_id, azure.client_idy azure.client_secreten su archivo o variables de entorno Vagrant.
+Los valores tenant, appId y password asignan a los valores de configuración azure.tenant_id, azure.client_idy azure.client_secreten su archivo o variables de entorno Vagrant.
 
 
 ## Creación del Vagrantfile
@@ -134,7 +134,7 @@ azure.tcp_endpoints = 80
 
 - El nombre de nuestra máquina virtual es iv1819noticias
 
-- Con un tamaño Standard_DS2_v2 "que nos proporciona Uso equilibrado de la CPU en proporción de memoria. Ideal para desarrollo y pruebas, bases de datos pequeñas o medianas, y servidores web de tráfico bajo o medio". [consultado](https://docs.microsoft.com/es-es/azure/virtual-machines/windows/sizes)
+- Con un tamaño Standard_DS2_v2 "que nos proporciona uso equilibrado de la CPU en proporción de memoria. Ideal para desarrollo y pruebas, bases de datos pequeñas o medianas, y servidores web de tráfico bajo o medio". [consultado](https://docs.microsoft.com/es-es/azure/virtual-machines/windows/sizes)
 
 ~~~
 azure.location = 'westeurope'
@@ -381,7 +381,7 @@ def StopApp():
 - El método InstallReq, instala los requirements.
 - El método ClonRepo, clona nuestro repositorio.
 - El método MicroservicioSecure, guarda la versión anterior, clona nuestro repositorio e instala los requirements.
-- El método MicroservicioClean, elimina la carpeta almacenada.
+- El método MicroservicioClean, elimina la carpeta almacenada, clona nuestro repositorio e instala los requirements.
 - El método LanzarApp, iniciamos la aplicación.
 - El método StopApp, detenemos la aplicación.
 
