@@ -258,7 +258,7 @@ Mi playbook.yml tiene el siguiente contenido:
     #Actualizamos repositorios
 
     - name: update repositorio
-      a
+      apt:
         update_cache: yes
       become: yes
 
