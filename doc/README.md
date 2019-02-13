@@ -1,7 +1,7 @@
 # Documentación para el proyecto.
 El proyecto que se va a realizar es sobre un microservicio que de las noticias
 más relevantes, partimos de una primera versión en la que a partir de un fichero
-con extensión .json que se optienen a partir de la [API del periódico del mundo](https://newsapi.org/s/el-mundo-api)
+con extensión .json que se obtienen a partir de la [API del periódico del mundo](https://newsapi.org/s/el-mundo-api)
 
 # Herramientas que van a ser usadas
 
