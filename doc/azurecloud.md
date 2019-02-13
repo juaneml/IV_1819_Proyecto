@@ -158,7 +158,7 @@ resource_group_name = 'iv1819noticias'
 
 - Evitamos que busque actualizaciones
 ~~~
-vm.box_check_update 
+vm.box_check_update
 ~~~
 
 - Por último le decimos que vamos a provisionar con ansible, le indicamos el modo de compatibilidad y la versión
@@ -185,6 +185,8 @@ vagrant up --provider = azure
 - En la siguiente captura podemos ver el resultado:
 ![vagrant_up](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/vagrant_up.png)
 
+- En la siguiente captura podemos ver el resultado de ansible:
+![ansible](https://github.com/juaneml/IV_1819_Proyecto/blob/master/doc/images/ansible.png)
 Enlaces consultados:
 - [tutorial](https://github.com/Azure/vagrant-azure/blob/v2.0/README.md)
 - [Configuración Vagrantfile-1](https://github.com/Azure/vagrant-azure/blob/v2.0/README.md)
